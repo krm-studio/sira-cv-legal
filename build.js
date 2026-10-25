@@ -172,6 +172,18 @@ const ar = {
 <p>حذف الحساب لا يلغي الاشتراك. ألغِه من Google Play: الحساب، المدفوعات والاشتراكات، الاشتراكات.</p>`],
 };
 
+// Landing page for Supabase confirmation / reset links (Site URL).
+en.confirmed = ['Email confirmed', `
+<h1>You're all set</h1>
+<p>Your email is confirmed. Open <b>Sira CV</b> on your phone and sign in with your email and password.</p>
+<p>If you asked to reset your password, go back to the app and sign in with your new password.</p>
+<p>Need help? ${mail}</p>`];
+ar.confirmed = ['تم تأكيد البريد', `
+<h1>تم بنجاح</h1>
+<p>تم تأكيد بريدك الإلكتروني. افتح <b>Sira CV</b> على هاتفك وسجّل الدخول ببريدك وكلمة المرور.</p>
+<p>إذا طلبت إعادة تعيين كلمة المرور، عد إلى التطبيق وسجّل الدخول بكلمة المرور الجديدة.</p>
+<p>تحتاج مساعدة؟ ${mail}</p>`];
+
 for (const [name, [title, body]] of Object.entries(en)) {
   fs.writeFileSync(path.join(dir, `${name}.html`), page('en', title, { href: `${name}-ar.html`, label: 'العربية' }, body));
 }
